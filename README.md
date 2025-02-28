@@ -33,7 +33,7 @@ Se mostrará una página con opciones para la creación de la tienda, deberás l
 
 Abajo encontrarás un repositorio con un proyecto que hemos preparado para la prueba, es una aplicación de Shopify hecha con ViteJs, encontrarás que en el backend tenemos un API REST con express, conexión a base de datos con mongoose y el front está hecho con React. Deberás crear tu propio repositorio y hacer un fork del que te damos, obtener una base de datos de mongodb, conectar la aplicación en tu cuenta de partner y finalmente instalarla en la tienda de desarrollo que creaste.
 
-- Fork del [repositorio](https://github.com/Witocorp-Organization/test-dev-app.git).
+- Fork del [repositorio](https://github.com/Witocorp-Organization/test-shopi-fullstack.git).
 - Obtén la URI de conexión a tu base de datos de la instancia de MongoDB que previamente creaste. Reemplaza el valor de la variable de entorno con el nombre `MONGO_URI` que encontrarás en el fichero `.env` dentro del directorio web.
 
 En la raíz del proyecto, ejecuta `yarn install` para instalar las dependencias necesarias, posterios a ello ejecuta `yarn dev`. Un mensaje como el el de la imágen de abajo te aparecerá con un enlace para que inicies sesión en tu cuenta de partner desde el navegador.
