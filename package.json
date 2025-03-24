@@ -9,9 +9,13 @@
     "dev": "shopify app dev",
     "info": "shopify app info",
     "generate": "shopify app generate",
-    "deploy": "shopify app deploy"
+    "deploy": "shopify app deploy",
+    "logout": "shopify auth logout",
+    "check_shopify": "shopify auth status"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@shopify/app-bridge-react": "^4.1.7"
+  },
   "author": "alejandrofantasticfy",
   "private": true,
   "workspaces": [

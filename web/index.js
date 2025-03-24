@@ -12,7 +12,11 @@ import { webhookHandlers } from "./webhooks/index.js";
 import { connectDb, shopify } from "./core/index.js";
 
 // Routes
-import { statusRouter } from "./router/index.js";
+import {
+  settingsRouter,
+  statusRouter,
+  productsRouter,
+} from "./router/index.js";
 
 // Method to connect to database
 connectDb();
@@ -49,6 +53,8 @@ app.use(express.json());
 
 // Routes for api
 app.use("/api/status", statusRouter);
+app.use("/api/products", productsRouter);
+app.use("/api/settings", settingsRouter);
 
 app.use(shopify.cspHeaders());
 app.use(serveStatic(STATIC_PATH, { index: false }));

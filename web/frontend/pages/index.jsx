@@ -14,7 +14,11 @@ import {
 } from "@shopify/polaris";
 
 export default function HomePage() {
-  const [summary, setSummary] = useState({ products: 0, collections: 0 });
+  const [summary, setSummary] = useState({
+    productsCount: { count: 0 },
+    customersCount: { count: 0 },
+    ordersCount: { count: 0 },
+  });
 
   const shopify = useAppBridge();
 
@@ -45,7 +49,7 @@ export default function HomePage() {
                   Products
                 </Text>
                 <InlineStack gap="200">
-                  <Text>{summary.products}</Text>
+                  <Text>{summary.productsCount.count}</Text>
                   {isLoading ? (
                     <Spinner size="small" />
                   ) : (
@@ -63,7 +67,25 @@ export default function HomePage() {
                   Customers
                 </Text>
                 <InlineStack gap="200">
-                  <Text>0</Text>
+                  <Text>{summary.customersCount.count}</Text>
+                  {isLoading ? (
+                    <Spinner size="small" />
+                  ) : (
+                    <Badge progress="complete" size="small" tone="success">
+                      Done
+                    </Badge>
+                  )}
+                </InlineStack>
+              </InlineStack>
+            </Box>
+            <Divider />
+            <Box padding="300">
+              <InlineStack align="space-between">
+                <Text as="p" variant="headingMd">
+                  Orders
+                </Text>
+                <InlineStack gap="200">
+                  <Text>{summary.ordersCount.count}</Text>
                   {isLoading ? (
                     <Spinner size="small" />
                   ) : (

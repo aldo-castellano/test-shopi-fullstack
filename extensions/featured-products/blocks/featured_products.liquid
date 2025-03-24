@@ -1,24 +1,74 @@
 {% comment %} Your code starts here {% endcomment %}
+{{ 'featured_products.css' | asset_url | stylesheet_tag }}
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <section id="featured-product-{{ block.id }}">
   {% comment %} block.settings object contains the settings you define in the schema object, you can access the settings values using the id as key, show example below {% endcomment %}
-  <h1>{{ block.settings.title }}</h1>
-  <p>test</p>
+
+  <div class="section-container">
+    <div class="container-img-section">
+      <img
+        class="section-img"
+        width="100%"
+
+        src="
+            {% if block.settings.featured_image == blank %}
+            {{"ImgExample.jpg" | asset_url  }}
+          {% else %}
+             {{ block.settings.featured_image | img_url: '702x' }}
+          {% endif %}
+        "
+        alt="Imagen destacada"
+      >
+      <div class="section-text-container">
+        <h1>{{ block.settings.title }}</h1>
+        <p>{{ block.settings.subtitle }}</p>
+      </div>
+    </div>
+    <div class="product-section">
+      <div class="swiper">
+        <div class="swiper-wrapper"></div>
+        <div class="pagination-swiper-container">
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 {% comment %} And ends here {% endcomment %}
 
 {% comment %} Don't delete this {% endcomment %}
+
+{{ 'featured_products.js' | asset_url | script_tag }}
+
 {% schema %}
 {
-  // In the customize, you will find your extension with this name
   "name": "Featured products",
   "target": "section",
-  // You must define your settings into this array
+
   "settings": [
     {
       "type": "text",
       "label": "Title",
-      "id": "title", // Use this to access the value in the block.settings object
+      "id": "title",
       "default": "Featured products title"
+    },
+    {
+      "type": "text",
+      "label": "subtitle",
+      "id": "subtitle",
+      "default": "Featured products subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "featured_image",
+      "label": "Imagen destacada"
     }
   ]
 }

@@ -1,24 +1,25 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "bee4c65350285700aa7cc6825a78acc2"
-name = "Test App"
-handle = "test-app-7134"
-application_url = "https://northern-policy-academy-israeli.trycloudflare.com"
+client_id = "061086311b26cc09dce60af3f171875e"
+name = "testApp"
+handle = "testapp-4293"
+application_url = "https://zimbabwe-wishlist-black-pattern.trycloudflare.com"
 embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
-dev_store_url = "fantasticfy-training-apps.myshopify.com"
+dev_store_url = "test-app-aldo.myshopify.com"
+include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products,write_shipping"
+scopes = "write_products,write_shipping,write_customers,read_customers,read_orders"
 
 [auth]
 redirect_urls = [
-  "https://northern-policy-academy-israeli.trycloudflare.com/auth/callback",
-  "https://northern-policy-academy-israeli.trycloudflare.com/auth/shopify/callback",
-  "https://northern-policy-academy-israeli.trycloudflare.com/api/auth/callback"
+  "https://zimbabwe-wishlist-black-pattern.trycloudflare.com/auth/callback",
+  "https://zimbabwe-wishlist-black-pattern.trycloudflare.com/auth/shopify/callback",
+  "https://zimbabwe-wishlist-black-pattern.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
@@ -29,7 +30,7 @@ api_version = "2023-10"
   uri = "/webhooks"
 
 [app_proxy]
-url = "https://northern-policy-academy-israeli.trycloudflare.com/prapi"
+url = "https://zimbabwe-wishlist-black-pattern.trycloudflare.com/prapi"
 subpath = "api-bbva"
 prefix = "apps"
 
